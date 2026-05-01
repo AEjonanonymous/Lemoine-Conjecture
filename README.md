@@ -3,7 +3,7 @@
 
 This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic. 
 
-## 📖 Overview: 
+## 📖 Overview
 Lemoine's Conjecture states that every odd number $N > 5$ can be expressed as:
 
 $$N = p_3 + 2 \cdot p_2$$
@@ -15,7 +15,7 @@ Where $p_2$ and $p_3$ are prime numbers. The **Lemoine Predictive Process** is a
 
 $$(N - 2 \cdot p_{test}) \equiv 0 \pmod{p_{key}}$$
 
-*   🔓 **The Solution**: The proof by construction demonstrates that a dead end is a logical contradiction. Because the algorithm follows strict recursive rules of modular arithmetic, it is mathematically forced to terminate at a valid prime partition, $p_{success}$.
+*   🔓 **The Solution**: The search is proven well-founded by demonstrating the available candidate list strictly decreases in length with each recursive step. Because the algorithm follows strict recursive rules of modular arithmetic, it is mathematically forced to terminate at a valid prime partition, $p_{success}$.
 
 ## 📂 Project Files
 
