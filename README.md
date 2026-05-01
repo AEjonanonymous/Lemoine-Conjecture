@@ -14,12 +14,6 @@ $$(N - 2 \cdot p_{test}) \equiv 0 \pmod{p_{key}}$$
 
 *   🔓 **The Solution**: The proof by construction demonstrates that a "dead end" is a logical contradiction. Because the algorithm follows strict recursive rules of modular arithmetic, it is mathematically forced to terminate at a valid prime partition, $p_{success}$.
 
-## 🛠 Core Logic
-
-* **The Governing Principle**: Formalized proof that $(N - 2 \cdot p_{test}) \equiv 0 \pmod{p_{key}}$.
-* **Termination**: The search is proven well-founded by showing the available candidate list strictly decreases in length with each recursive step.
-* **Dead-End Contradiction**: The proof demonstrates that a failure state is logically impossible under the algorithm's recursive rules.
-
 ## 📂 Project Files
 
 * **📝 The Lemoine Predictive Theorem - A Machine-Verified Constructive Proof of Lemoine's Conjecture.pdf**: The full research manuscript detailing the logic and formalization.
