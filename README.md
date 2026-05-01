@@ -20,8 +20,8 @@ Where $p_2$ and $p_3$ are prime numbers. This project formalizes a **Predictive 
 ## 📂 Project Files
 
 * **📝 The Lemoine Predictive Theorem - A Machine-Verified Constructive Proof of Lemoine's Conjecture.pdf**: The full research manuscript detailing the logic and formalization.
-* **`lemoine_predictive_theorem.lean`**: The primary implementation of the Lemoine Predictive Process and constructive proof.
-* **`lemoine_generalized_theorem.lean`**: A baseline linear search proof confirming the stability of the conjecture's search space.
+* **`lemoine_predictive_theorem.lean`**: Guided constructive proof (Predictive Process).
+* **`lemoine_generalized_theorem.lean`**: Generalized constructive proof (Linear Search).
 * **`Lemoine Partition Calculator.html`**: A standalone tool to verify partitions for any odd integer $N > 5$.
 
 ## ✅ Formal Verification in Lean 4 Web
@@ -36,6 +36,6 @@ Direct links to the formalized Lean 4 files:
 
 ORCID: [0009-0008-7345-1407](https://orcid.org/0009-0008-7345-1407)
 
-[![Topic: Additive Number Theory](https://img.shields.io/badge/Topic-Additive_Number_Theory-orange.svg)](https://en.wikipedia.org/wiki/Additive_number_theory)
+[![Field: Additive Number Theory](https://img.shields.io/badge/Field-Additive_Number_Theory-orange.svg)](https://en.wikipedia.org/wiki/Additive_number_theory)
 [![Lean 4](https://img.shields.io/badge/Lean-4.28.0-blue.svg)](https://leanprover.github.io/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
