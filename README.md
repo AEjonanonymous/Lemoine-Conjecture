@@ -1,15 +1,18 @@
 # <p align="center"><i>Lemoine Predictive Theorem</i>
 ## <p align="center"><i>A Machine-Verified Constructive Proof of Lemoine's Conjecture</i>
 
-This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic. 🔍
+This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic. 
 
-## 📖 Overview
+## 📖 Overview: The Predictive Process
 
-Lemoine's Conjecture states that every odd number $N > 5$ can be expressed as:
+The Lemoine Predictive Process is a constructive method that transforms a trial-and-error search into a guided logical chain.
 
-$$N = p_3 + 2 \cdot p_2$$
+*   🔍 **The Clue**: If a test fails, the resulting composite number $C$ is not random; it serves as a mathematical clue that contains the key to the next step.
+*   🔑 **The Key**: Every clue $C$ is mathematically guaranteed to contain the next prime ($p_{key}$) via the governing modular identity:
 
-Where $p_2$ and $p_3$ are prime numbers. This project formalizes a **Predictive Process**. When a candidate $p_2$ fails, the resulting composite number $C$ serves as a mathematical "clue" that identifies the prime factor for the next iteration, ensuring a solution is always found.
+$$(N - 2 \cdot p_{test}) \equiv 0 \pmod{p_{key}}$$
+
+*   🔓 **The Solution**: The proof by construction demonstrates that a "dead end" is a logical contradiction. Because the algorithm follows strict recursive rules of modular arithmetic, it is mathematically forced to terminate at a valid prime partition, $p_{success}$.
 
 ## 🛠 Core Logic
 
