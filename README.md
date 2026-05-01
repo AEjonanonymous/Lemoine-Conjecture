@@ -1,4 +1,4 @@
-# <p align="center"><i>Lemoine Predictive Theorem</i>
+# <p align="center">🏗️ The Lemoine ℙredictive Theorem 🏗️
 ## <p align="center"><i>A Machine-Verified Constructive Proof of Lemoine's Conjecture</i>
 
 This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic. 
