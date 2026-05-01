@@ -36,5 +36,6 @@ Direct links to the formalized Lean 4 files:
 
 ORCID: [0009-0008-7345-1407](https://orcid.org/0009-0008-7345-1407)
 
+[![Topic: Additive Number Theory](https://img.shields.io/badge/Topic-Additive_Number_Theory-orange.svg)](https://en.wikipedia.org/wiki/Additive_number_theory)
 [![Lean 4](https://img.shields.io/badge/Lean-4.28.0-blue.svg)](https://leanprover.github.io/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
