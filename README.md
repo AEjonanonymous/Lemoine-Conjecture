@@ -1,7 +1,7 @@
 # <p align="center"><i>Lemoine Predictive Theorem</i>
 ## <p align="center"><i>A Machine-Verified Constructive Proof of Lemoine's Conjecture</i>
 
-This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic.
+This repository contains the formal verification of the **Lemoine Predictive Process**, a constructive method for settling Lemoine’s Conjecture. The project utilizes Lean 4 to demonstrate that a valid prime partition for any odd integer $N > 5$ is logically guaranteed by a governing principle of modular arithmetic. 🔍
 
 ## 📖 Overview
 
@@ -13,17 +13,17 @@ Where $p_2$ and $p_3$ are prime numbers. This project formalizes a **Predictive 
 
 ## 📂 Project Files
 
+* **📝 The Lemoine Predictive Theorem - A Machine-Verified Constructive Proof of Lemoine's Conjecture.pdf**: The full research manuscript detailing the logic and formalization.
 * **`lemoine_predictive_theorem.lean`**: The primary implementation of the Lemoine Predictive Process and constructive proof.
 * **`lemoine_generalized_theorem.lean`**: A baseline linear search proof confirming the stability of the conjecture's search space.
-* **`Lemoine Partition Calculator.html`**: A standalone calculator to visualize and verify partitions for any odd integer $N > 5$.
-* **`The Lemoine Predictive Theorem - A Machine-Verified Constructive Proof of Lemoine's Conjecture.pdf`**: The full research manuscript detailing the logic and formalization.
+* **`Lemoine Partition Calculator.html`**: A standalone tool to verify partitions for any odd integer $N > 5$.
 
-## 🔍 Formal Verification in Lean 4 Web
+## ✅ Formal Verification in Lean 4 Web
 
 Direct links to the formalized Lean 4 files:
 
-* [**lemoine_predictive_theorem.lean**](INSERT_LINK_HERE)
-* [**lemoine_generalized_theorem.lean**](INSERT_LINK_HERE)
+* [**lemoine_predictive_theorem.lean**](https://live.lean-lang.org/#codez=JYWwDg9gTgLgBAWQIYwBYBtgCMB0ARFJHAORRwAUpQBTHAISQGdgBjAKFElkRQ230IkyAMSQsY0RmzYQw1AHZxSMaQFpVcAIw44AFQASAUTgBxAPIA1QwCViASWIm45aw4DCd8gBlDALjYAJtQAZnAA5tQwAPry1AAe0QDW1ACecAAUbnC%2BcICohACUGUgAbkjA6EhY6NTZcF7AjPAFtbnZALxscHDV8MFiElCM7XBuOCDA8qIscJ1wwKF94pJwgBBEcCVlFVU1aApwiwND1OiMNekb5ZXVOKjUSAF4cAAM%2BWoaAEw6BsYuhnh2bl0diszmsZjchgAypD%2FEFQtUQBAJtQoqckFAWKgMsQWoVzqVLttavVGnlCjlWr4Ol0QChMesCVtqnAAO7ANCzAA%2BcAA2gBdOBtAB8zxmXW5YCiMGopN8OSgMvgwtmXR6I2GOI%2BcAAVHBJdLGiq5qFlBQqCAalldvIjV19Yq4Oo4JCAKpuCHQo3HU5vOAAZi%2BRjg1kMbhd1khwOMkN0hnI%2Fi6ie6kT1UWSaSp4UiMXiSVS6oVhqTqpTsQSUQuTJqmcLMBwwXK0qgGUA3cBwOKCkUdwCmRKn069i3BUCVq3Ay9FK1daNV5GE0HAADwZe2y%2BWK%2FI4GdzrGZrApW2J5jgXnjiuMqd8g9dJBgMDoNKm9DRRgAVxYLCiEGCUWqV%2FWt%2FvOoGjrLc0CiBsn2oKAf2oA8ESRWJUTuDEsRxU9J22Ngm3GeQUGACB5CiPcGU2KdNwUbcgA)
+* [**lemoine_generalized_theorem.lean**](https://live.lean-lang.org/#codez=JYWwDg9gTgLgBAWQIYwBYBtgCMB0ARFJHAORRwAUpQBTHAISQGdgBjAKDYjGoDs5SYHALRC4ARhxwAMsEbwA8gDM4ANSSYAJnEo1G%2FAPQAmAFxsN1ZQHNqMAPpRqjalABuEYFDgAKYnGNxAVEIASj9pWXgAvwBeNjhvGTkcKCQea29ffThDIKCcRWB0GGdvQG7gODA4KIA%2BfjIdEGpyoOFRQ0kAFVRGmR5qJE8AZT6oFlRTc2V0ahB3XtsnftH00ODvJBckAqQsKdCEiJD%2FSOMYuJAUJfXN9G3dgHdgNFi4AB84AG0AXUqagAY4ERwTqNADCEB4MGSGlYMGA4P8xAgcBmDjgiiQLBg0D01AAHuE4MA%2BGhGgAJdSKIQDMAY6jPN5gWxFOR%2BfwOFnVZ5xKbwEHRfgArJwABU5SZjkEcTiwGUAgoVAacD5JJ4XKljOZ8EBAwAqiCQQBRAYDNXUdBOFpwADMHS6cAAStQWABXKDMFyNAZFMD%2BNXc6azajzYZLXzswRsIpQEBElBwni2LAATzgVy2O1oU1SaCAA)
 
 ## 🛠 Core Logic
 
