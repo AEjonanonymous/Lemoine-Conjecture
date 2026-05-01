@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemoine Partition Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10 w-full max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center mb-2">Lemoine Partition Calculator</h1>
+        <p class="text-center text-gray-600 mb-6">
+            Enter an odd integer greater than 5 to find its Lemoine partitions.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+            <input type="number" id="numberInput" placeholder="e.g., 27"
+                   class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <button id="calculateBtn"
+                    class="w-full sm:w-auto px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold shadow-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Calculate
+            </button>
+        </div>
+
+        <div id="loadingMessage" class="hidden text-center text-blue-600 font-medium">
+            Calculating...
+        </div>
+
+        <div id="results" class="space-y-4">
+            <!-- Results will be displayed here -->
+        </div>
+
+    </div>
+
+    <script>
+        // DOM elements
+        const numberInput = document.getElementById('numberInput');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultsDiv = document.getElementById('results');
+        const loadingMessage = document.getElementById('loadingMessage');
+
+        // Prime number generation cache for efficiency
+        let primesCache = [];
+
+        // Function to generate primes up to a given number using Sieve of Eratosthenes
+        const generatePrimes = (limit) => {
+            if (limit <= primesCache[primesCache.length - 1]) {
+                return primesCache.filter(p => p <= limit);
+            }
+            
+            const sieve = new Array(limit + 1).fill(true);
+            sieve[0] = sieve[1] = false;
+            for (let p = 2; p * p <= limit; p++) {
+                if (sieve[p]) {
+                    for (let i = p * p; i <= limit; i += p) {
+                        sieve[i] = false;
+                    }
+                }
+            }
+            
+            const newPrimes = [];
+            for (let i = 2; i <= limit; i++) {
+                if (sieve[i]) {
+                    newPrimes.push(i);
+                }
+            }
+            primesCache = newPrimes;
+            return primesCache;
+        };
+
+        // Function to check if a number is a semiprime (product of exactly two primes)
+        const isSemiprime = (n) => {
+            if (n <= 1) return false;
+            let factors = 0;
+            let temp = n;
+            for (let i = 2; i * i <= temp; i++) {
+                while (temp % i === 0) {
+                    factors++;
+                    temp /= i;
+                }
+            }
+            if (temp > 1) {
+                factors++;
+            }
+            return factors === 2;
+        };
+
+        // Main function to check the Lemoine conjecture
+        const checkLemoine = (n) => {
+            const primes = generatePrimes(n);
+            let validPartitions = [];
+            let totalPartitions = 0;
+
+            for (const p of primes) {
+                const remainder = n - p;
+                if (remainder > 0 && remainder % 2 === 0) {
+                    totalPartitions++;
+                    if (isSemiprime(remainder)) {
+                        validPartitions.push({ prime: p, remainder: remainder });
+                    }
+                }
+            }
+            return { totalPartitions, validPartitions };
+        };
+
+        // Main event handler for the button click
+        calculateBtn.addEventListener('click', () => {
+            const n = parseInt(numberInput.value, 10);
+            resultsDiv.innerHTML = '';
+            
+            // Input validation
+            if (isNaN(n) || n <= 5 || n % 2 === 0) {
+                resultsDiv.innerHTML = `
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">Invalid Input!</strong>
+                        <span class="block sm:inline">Please enter an odd integer greater than 5.</span>
+                    </div>
+                `;
+                return;
+            }
+
+            // Show loading message
+            loadingMessage.classList.remove('hidden');
+            calculateBtn.disabled = true;
+
+            // Use a timeout to allow the loading message to render
+            setTimeout(() => {
+                const result = checkLemoine(n);
+                
+                // Hide loading message and re-enable button
+                loadingMessage.classList.add('hidden');
+                calculateBtn.disabled = false;
+
+                // Display the results
+                let html = `
+                    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded-lg shadow-md mb-4" role="alert">
+                        <p class="font-bold">Total Partitions Checked: ${result.totalPartitions}</p>
+                        <p class="font-bold">Valid Lemoine Partitions Found: ${result.validPartitions.length}</p>
+                    </div>
+                `;
+
+                if (result.validPartitions.length > 0) {
+                    html += `<h3 class="text-xl font-semibold mb-2">Valid Partitions:</h3>`;
+                    html += `<ul class="list-disc pl-5 space-y-2">`;
+                    result.validPartitions.forEach(p => {
+                        html += `<li>${n} = ${p.prime} + ${p.remainder} (${p.remainder} is a semiprime)</li>`;
+                    });
+                    html += `</ul>`;
+                } else {
+                    html += `<p class="text-gray-600">No valid partitions found for this number.</p>`;
+                }
+                
+                resultsDiv.innerHTML = html;
+            }, 100);
+        });
+    </script>
+</body>
+</html>
