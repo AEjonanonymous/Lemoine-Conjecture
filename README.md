@@ -20,8 +20,8 @@ Where $p_2$ and $p_3$ are prime numbers. This project formalizes a **Predictive 
 ## 📂 Project Files
 
 * **📝 The Lemoine Predictive Theorem - A Machine-Verified Constructive Proof of Lemoine's Conjecture.pdf**: The full research manuscript detailing the logic and formalization.
-* **`lemoine_predictive_theorem.lean`**: Guided constructive proof (Predictive Process).
-* **`lemoine_generalized_theorem.lean`**: Generalized constructive proof (Linear Search).
+* **`lemoine_predictive_theorem.lean`**: Guided proof by construction (Predictive Process).
+* **`lemoine_generalized_theorem.lean`**: Generalized proof by construction (Linear Search).
 * **`Lemoine Partition Calculator.html`**: A standalone tool to verify partitions for any odd integer $N > 5$.
 
 ## ✅ Formal Verification in Lean 4 Web
