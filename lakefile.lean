@@ -1,8 +1,8 @@
 import Lake
 open Lake DSL
 
-package «lemoine-conjecture» where
+package «LemoineConjecture» where
 
 @[default_target]
-lean_lib «lemoine-conjecture» where
+lean_lib «LemoineConjecture» where
   srcDir := "."
