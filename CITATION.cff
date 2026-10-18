@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite this research as follows."
+authors:
+  - name: "Jonathan ƒ(n)"
+title: "The Lemoine Predictive Theorem: A Machine-Verified Constructive Proof of Lemoine's Conjecture"
+version: 1.0.0
+doi: 10.5281/zenodo.19957584
+date-released: 2026-05-01
